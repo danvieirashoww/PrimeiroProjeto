@@ -1,0 +1,5 @@
+__pycache__/
+static/input/*
+static/output/*
+!static/input/.gitkeep
+!static/output/.gitkeep
