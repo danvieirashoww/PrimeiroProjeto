@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Remoção de Fundo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Remova o Fundo</h1>
+      <form method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Processar</button>
+      </form>
+
+      {% if filename %}
+      <div class="result">
+        <h2>Resultado</h2>
+        <img src="{{ url_for('static', filename='output/' + filename) }}" alt="Imagem sem fundo">
+        <a class="download" href="{{ url_for('download_file', filename=filename) }}">Baixar</a>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
